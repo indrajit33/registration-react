@@ -12,9 +12,21 @@ class ProductListingPage extends React.Component {
 
     render() {
         const { products } = this.props;
-        //console.log(products);
+        console.log(products.items);
+
+    let list = "";
+    if (products.items) {
+         list = products.items.map((item, index) => {
+            return (
+                <li  key={item.id} >
+                    {item.sku}
+                </li>
+            );
+        })
+    }
+ 
         return (
-            <div> I Am In</div>
+           <ul>{list}</ul>
         );
     }
 }
