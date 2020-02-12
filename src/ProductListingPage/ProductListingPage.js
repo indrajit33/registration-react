@@ -5,17 +5,14 @@ import { connect } from 'react-redux';
 import { userActions,productActions } from '../_actions';
 
 class ProductListingPage extends React.Component {
+
     componentDidMount() {
         this.props.getAllProducts();
     }
 
-    handleDeleteUser(id) {
-        //return (e) => this.props.deleteUser(id);
-    }
-
     render() {
-        const { user, users } = this.props;
-        //console.log(users);
+        const { products } = this.props;
+        //console.log(products);
         return (
             <div> I Am In</div>
         );
@@ -23,14 +20,12 @@ class ProductListingPage extends React.Component {
 }
 
 function mapState(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
-    return { user, users };
+    const { products } = state;
+    return { products };
 }
 
 const actionCreators = {
-    getAllProducts: productActions.getAllProducts,
-    deleteUser: userActions.delete
+    getAllProducts: productActions.getAllProducts
 }
 
 const connectedProductListingPage = connect(mapState, actionCreators)(ProductListingPage);
