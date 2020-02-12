@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
+import { userActions,productActions } from '../_actions';
 
 class ProductListingPage extends React.Component {
     componentDidMount() {
@@ -29,7 +29,7 @@ function mapState(state) {
 }
 
 const actionCreators = {
-    getAllProducts: userActions.getAllProducts,
+    getAllProducts: productActions.getAllProducts,
     deleteUser: userActions.delete
 }
 
